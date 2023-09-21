@@ -39,7 +39,7 @@ def take_command():
     return command
 
 def temp():
-    search = "temperature in Gujarat"
+    search = "temperature in *your city*"
     url = f"https://www.google.com/search?q={search}"
     r = requests.get(url)
     data = BeautifulSoup(r.text, "html.parser")
@@ -51,12 +51,12 @@ def sendEmail(to, content):
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.ehlo()
     server.starttls()
-    server.login('vedantvagnihotri@gmail.com', 'Vedant@7110')
-    server.sendmail('vedantvagnihotri@gmail.com', to, content)
+    server.login('yourid@yourmail.com', 'your password')
+    server.sendmail('yourid@yourmail.com', to, content)
     server.close()
 
 def myLocation():
-    current_map = "https://www.google.com/maps/place/Nirnay+Nagar,+Ahmedabad,+Gujarat+380081/@23.0734237,72.5604735,21z/data=!4m5!3m4!1s0x395e83675e8be929:0x275bea7bd2d36b70!8m2!3d23.0698718!4d72.5510887"
+    current_map = "your location URL"
     webbrowser.open(current_map)
     ip_add = requests.get('https://api.ipify.org').text
     url = 'https://get.geojs.io/v1/ip/geo/' + ip_add + '.json'
@@ -110,16 +110,16 @@ def run_jarvis():
         print("Opening YouTube!")
         talk("Opening YouTube!")
         webbrowser.open("https://www.youtube.com/")
-    elif 'team' in command:
-        print("Opening Microsoft Teams...")
-        talk("Opening Microsoft Teams...")
-        teams = ("C:\\Users\\vedant agnihotri\\AppData\\Local\\Microsoft\\Teams\\current\\Teams.exe")
-        os.startfile(teams)
     elif 'vs code' in command:
         print("Opening Visual Studio...")
         talk("Opening Visual Studio...")
-        vsCode = ("D:\\Vedant's stuff\\Microsoft VS Code\\Code.exe")
+        vsCode = ("enter file path")
         os.startfile(vsCode)
+        elif 'discord' in command:
+        print("Opening Discord...")
+        talk("Opening Discord...")
+        vsCode = ("enter file path")
+        os.startfile(discord)
     elif 'email' in command:
         try:
             talk("What should I send?")
@@ -146,10 +146,10 @@ def run_jarvis():
     elif 'my location' in command:
         myLocation()
     elif 'who are you' or 'what are you' in command:
-        print('I am an AI programmed by Vedant Agnihotri. I am named Jarvis. Sir?')    
-        talk('I am an AI programmed by Vedant Agnihotri. I am named Jarvis. Sir?')
+        print('I am an AI programmed by exotic. I am named Jarvis. Sir?')    
+        talk('I am an AI programmed by exotic. I am named Jarvis. Sir?')
     elif 'instagram' or 'insta' in command:
-        webbrowser.open('https://www.instagram.com/ig_vedxnt/')
+        webbrowser.open('https://www.instagram.com/)
         print('Opening Instagram...')
         talk('Opening Instagram...')
     else:
