@@ -149,7 +149,7 @@ def run_jarvis():
         print('I am an AI programmed by exotic. I am named Jarvis. Sir?')    
         talk('I am an AI programmed by exotic. I am named Jarvis. Sir?')
     elif 'instagram' or 'insta' in command:
-        webbrowser.open('https://www.instagram.com/)
+        webbrowser.open('https://www.instagram.com/')
         print('Opening Instagram...')
         talk('Opening Instagram...')
     else:
